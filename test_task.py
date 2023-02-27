@@ -53,7 +53,7 @@ class Rules:
             return coords
 
         except Exception as e:
-            logger.exception(f"{e}")
+            logger.exception(e)
 
     @method_decorator
     def save_pickle(self):
@@ -100,7 +100,7 @@ class Paint:
             logger.exception("Системе не удается найти указанный путь")
 
         except Exception as e:
-            logger.exception(f"{e}")
+            logger.exception(e)
 
 
 image = cv.imread(askopenfilename())
