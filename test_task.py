@@ -9,6 +9,7 @@ from os import listdir
 
 
 def method_decorator(func: Callable):
+    """Декоратор логгирования"""
     def wrapper(self, *args, **kwargs) -> Dict[str, int]:
         logger.debug(f"Запускается {func.__name__}")
         start = time.time()
@@ -36,6 +37,7 @@ class Rules:
 
     @method_decorator
     def find_matches(self, image) -> List[List[int]]:
+        """Принимает экземпляр класса Rules и производит поиск совпадений по шаблонам"""
         try:
             coords: List = []
             for figure in self.template:
@@ -70,6 +72,9 @@ class Paint:
 
     @method_decorator
     def run(self, res_dict: Dict = {}) -> Dict[str, int]:
+        """Принимает список экземпляров класса Rules, вызывает метод find_matches.
+        После чего рисует контуры прямоугольников, сохраняет изображение с контурами и возвращает словарь с координатами фигур
+        """
         try:
             for template in self.templates:
                 self.result = template.find_matches(self.image)
@@ -84,6 +89,7 @@ class Paint:
 
     @method_decorator
     def read_pickle(self) -> None:
+        """Создает список экземпляров класса Rules из файлов и передает в метод run"""
         try:
             files = listdir(mypath)
             pickles = filter(lambda x: x.endswith('.pickle'), files)
