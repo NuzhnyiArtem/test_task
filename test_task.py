@@ -105,6 +105,6 @@ class Paint:
 
 image = cv.imread(askopenfilename())
 
-mypath = r"C:\Users\mlwk\PycharmProjects\itfbtest\itfboop"
+mypath = r""
 p = Paint(image)
 p.read_pickle()
