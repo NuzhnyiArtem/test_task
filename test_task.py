@@ -37,7 +37,8 @@ class Rules:
 
     @method_decorator
     def find_matches(self, image) -> List[List[int]]:
-        """Принимает экземпляр класса Rules и производит поиск совпадений по шаблонам"""
+        """Принимает экземпляр класса Rules и производит поиск совпадений по шаблонам
+        возвращает список координат фигуры"""
         try:
             coords: List = []
             for figure in self.template:
