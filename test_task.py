@@ -1,5 +1,5 @@
 import pickle
-import cv2 as cv # type: ignore
+import cv2 as cv
 import numpy as np
 from tkinter.filedialog import askopenfilename
 import time
